@@ -1,0 +1,544 @@
+@import url("https://fonts.googleapis.com/css2?family=Aclonica&family=Amatic+SC:wght@400;700&family=Bungee&family=DynaPuff:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Pacifico&family=Playwrite+DE+SAS:wght@100..400&family=Playwrite+US+Modern:wght@100..400&family=Rock+Salt&display=swap");
+
+:root {
+    --primary-color: #7b0f0f;        
+    --secondary-color: #a43333;     
+    --card-bg: rgb(132, 41, 41);
+    --hover-color: #f7e0e0;         
+    --text-light: #c4bebe;
+    --text-dark: #000000;
+}
+
+body {
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--text-light);
+    color: var(--text-dark);
+    font-family: "Aclonica", sans-serif;
+    line-height: 1.6;
+}
+
+/* ===== Aside (Redes Sociais) ===== */
+aside {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+}
+
+aside h3 {
+    font-size: 1.4rem;
+    color: #222;
+    margin-bottom: 15px;
+    font-weight: 700;
+    border-left: 4px solid #2ecc71;
+    padding-left: 10px;
+}
+
+.social-links p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+}
+
+.social-links p:hover {
+    color: #2ecc71;
+    transition: 0.3s ease;
+}
+
+
+/* ===== Footer ===== */
+footer {
+    background: #2ecc71;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+
+
+
+.box img {
+    max-width: 200px;
+    height: auto;
+    margin-top: 20px;
+    margin: 20px;
+}
+
+.box {
+    width: clamp(300px, 80%, 700px); 
+    width: 690px;
+    height: 200px;
+    margin: 40px auto 20px;
+    background-color: var(--card-bg);
+    color: var(--text-light);
+    border-radius: 22px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #7b0f0f; 
+
+}
+.box h1 {
+    font-size: clamp(30px, 5vw, 45px); 
+    margin: 0;
+    font-weight: 700;
+    color: var(--text-light);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    font-family:"Aclonica", sans-serif;
+}
+/* Botão do menu */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 28px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 11000;
+    transition: 0.3s;
+}
+
+.menu-btn:hover {
+    background-color: var(--secondary-color);
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -240px;   /* escondido */
+    width: 220px;
+    height: 100vh;
+    background-color: var(--primary-color);
+    padding-top: 30px;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.4);
+    z-index: 10000;
+    transition: 0.4s ease;
+}
+
+.sidebar.open {
+    left: 0;       /* aparece */
+}
+
+.sidebar h2 {
+    color: var(--hover-color);
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Aclonica", sans-serif;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+/* Removemos o margin-left do body */
+body {
+    margin-left: 0 !important;
+}
+
+/* --- Header e Navegação --- */
+
+header {
+    order: -1; 
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    width: 100%;
+    background-color: var(--primary-color);
+    box-sizing: border-box;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    font-size: 18px; 
+    font-family: "Aclonica", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text-light);
+    display: block;
+    padding: 5px 10px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--hover-color);
+    transform: translateY(-2px); 
+}
+
+.título {
+    width: clamp(320px, 95%, 1200px); /* Garante que a seção use a largura máxima */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.título h1 {
+    font-size: clamp(30px, 4vw, 40px);
+    margin: 20px 0 30px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.search-box input[type="text"] {
+    padding: 12px 20px;
+    width: 300px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50px;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: var(--text-light);
+    color: var(--text-dark);
+}
+
+.search-box input[type="text"]:focus {
+    width: 400px;
+    box-shadow: 0 0 15px var(--secondary-color);
+    border-color: var(--primary-color);
+}
+
+.search-box button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: -50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-box button:hover {
+    background-color: var(--card-bg);
+    color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+
+.box1 {
+    /* Manter cores, mas melhorar a aparência de botões/links */
+    width: clamp(300px, 80%, 1200px); /* Ajuste para ter uma largura mais moderna e responsiva */
+    height: auto; /* Altura flexível */
+    margin: 40px auto;
+    background-color: var(--primary-color); /* Fundo primário */
+    border-radius: 15px; /* Bordas mais suaves */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    padding: 15px 30px;
+    display: flex;
+    flex-wrap: wrap; /* Permite quebras de linha em telas menores */
+    justify-content: space-around; /* Distribui o espaço entre os itens */
+    align-items: center;
+    gap: 20px;
+    border: 3px solid var(--secondary-color);
+}
+
+.box1 h2 {
+    font-size: clamp(16px, 3vw, 24px); 
+    margin: 0;
+    font-weight: 600;
+    color: var(--text-light); /* Cor clara para o texto */
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-shadow: none; /* Remove a sombra do texto para clareza */
+    /* Estilo de botão/tag */
+    border: 2px solid transparent; 
+}
+
+.box1 h2:hover {
+    background-color: var(--secondary-color); 
+    color: var(--hover-color);
+    transform: translateY(-2px);
+    border-color: var(--hover-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* CARDS DE NOTÍCIAS/MATÉRIAS */
+
+.cards-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 40px; 
+    padding: 20px;
+    width: clamp(320px, 95%, 1200px);
+}
+
+/* Estilo Base para Todos os Cards */
+.cards-container > div[class^="card"] { /* Seleciona card1, card2, card3, etc. */
+    width: 100%; /* Ocupa a largura total do container */
+    max-width: 1100px;
+    background-color: #fcfcfc; /* Fundo branco/claro para contraste */
+    color: var(--text-dark);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    overflow: hidden; /* Garante que a imagem e o texto fiquem dentro do card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--text-light); /* Borda sutil */
+    height: auto !important; /* Remove alturas fixas para adaptabilidade */
+    min-height: 200px; /* Altura mínima */
+}
+
+.cards-container > div[class^="card"]:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cards-container img {
+    width: 40%; /* Imagem ocupando 40% do card */
+    height: 100%;
+    min-height: 200px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 18px 0 0 18px;
+}
+
+.cards-container h3 {
+    width: 60%; /* Título ocupando 60% do card */
+    padding: 20px 30px;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o texto */
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--primary-color);
+}
+
+h1 {
+    /* Cor e tamanho da fonte */
+    color: #333;
+    font-size: 2.5em;
+    /* Adiciona uma linha de separação na parte de baixo */
+    
+    /* Espaçamento em baixo */
+    padding-bottom: 10px;
+    /* Centraliza o texto */
+    text-align: center;
+    /* Margem em cima e embaixo */
+    margin-bottom: 40px;
+    /* Efeito de sombra sutil */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Estilo da Seção Principal (Section) --- */
+.section-Músicas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Espaçamento interno */
+    gap: 30px;
+    /* Largura máxima para centralizar o conteúdo */
+    max-width: 1200px;
+    /* Preenchimento em cima e embaixo */
+    padding: 20px 0;
+}
+
+/* --- Estilo do Card Individual (div.card5) --- */
+.card5 {
+    /* Largura fixa para cada card, mas ajusta em telas pequenas */
+    width: 300px;
+    /* Adiciona um preenchimento interno */
+    padding: 15px;
+    /* Cor de fundo do card */
+    background-color: #fff;
+    /* Borda arredondada */
+    border-radius: 12px;
+    /* Sombra para dar profundidade */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    /* Transição suave para efeitos de hover */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Centraliza o iframe dentro do card */
+    text-align: center;
+    height: 400px;
+}
+
+/* Efeito de hover para interatividade */
+.card5:hover {
+    /* Levanta o card */
+    transform: translateY(-5px);
+    /* Intensifica a sombra */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Estilo do Iframe (Embed do Spotify) --- */
+.card5 iframe {
+    /* Garantir que o iframe ocupe toda a largura do card, mas não mais que 300px */
+    max-width: 100%;
+    /* Altura definida no HTML (600px) */
+    height: 600px;
+    /* Remover a borda padrão */
+    border: none;
+    /* Manter o border-radius definido no HTML */
+    border-radius: 12px;
+}
+
+/* --- Media Queries (Para responsividade em telas menores) --- */
+/* Esconde navegação principal em telas pequenas */
+@media (max-width: 900px) {
+    header nav {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+        padding: 0 10px 10px;
+    }
+
+    .section-Músicas {
+        /* Muda a direção dos itens para coluna em telas menores, um em cima do outro */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card5 {
+        /* O card ocupa quase toda a largura em telas pequenas */
+        width: 90%;
+        max-width: 350px; /* Limita um pouco para não ficar muito grande */
+        margin-bottom: 20px;
+    }
+    
+    /* Adicionando ajustes para o search-box para empilhamento */
+    .search-box {
+        flex-direction: column;
+        align-items: stretch;
+        width: 90%;
+        max-width: 450px;
+    }
+    .search-box input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .search-box input[type="text"]:focus {
+        width: 100%;
+    }
+    .search-box button {
+        margin-left: 0;
+        margin-top: 5px;
+        width: 100%;
+    }
+    
+}
+
+
+/* Media Queries para Cards de Matérias (notícias) */
+@media (max-width: 1150px) {
+    .cards-container > div[class^="card"] {
+        flex-direction: column; /* Coloca imagem e texto em coluna */
+        min-height: auto;
+    }
+
+    .cards-container img {
+        width: 100%; /* Imagem ocupa 100% da largura no modo coluna */
+        height: auto;
+        max-height: 300px;
+        border-radius: 18px 18px 0 0;
+    }
+
+    .cards-container h3 {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        min-height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .box1 {
+        padding: 15px;
+        width: 90%;
+    }
+    .box1 h2 {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+    
+    /* Ajuste do box principal */
+    .box {
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .box img {
+        max-width: 100px;
+        margin: 10px;
+    }
+}
+
+.card2 a {
+    text-decoration: none;
+    color: inherit;
+}

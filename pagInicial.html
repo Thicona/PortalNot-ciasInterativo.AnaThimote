@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PegaVisão</title>
+    <link rel="stylesheet" href="../css/pagInicial.css" />
+</head>
+<body>
+    
+    <div class="box">
+        <h1>Pega Visão</h1>
+        <img src="/img/logo.png" alt="logo">
+    </div>
+      <header>
+      <nav id="SobreNós">
+        <ul>
+          <li><a href="pagInicial.html">Página Inicial</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="entretenimento.html">Entretenimento</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+<div class="sidebar" id="sidebar">
+    <h2>Menu</h2>
+    <ul>
+        <li><a href="pagInicial.html">Página Inicial</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="entretenimento.html">Entretenimento</a></li>
+        <li><a href="contato.html">Contato</a></li>
+    </ul>
+</div>
+    
+    <div class="search-container">
+        <form class="search-box" action="#" method="GET">
+            <input type="text" name="query" placeholder="Digite sua busca...">
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+        
+    <h1>Novas Últimas</h1>
+
+    <div class="content-wrapper">
+        
+        <main class="main-content">
+            <section class="carousel-container">
+                <div class="carousel-track">
+                    
+                    <div class="card">
+                        <h2>MEC aciona PF e anula três questões do segundo dia do Enem.</h2>
+                        <h4> data: 18 de Novembro de 2025</h4>
+                        <img src="https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.3710813:1763490099/caderno%20de%20prova%20enem%20e%20suposto%20vazamento%20de%20quest%C3%B5es.jpg?f=4x3&h=960&w=1280&$p$f$h$w=b244f84" alt="Notícia 3">
+                        
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Arrascaeta joga hoje pelo Flamengo? Vejo histórico do jogador contra o Fluminense</h2>
+                        <h4> data: 19 de Novembro de 2025</h4>
+                        <img src="https://uai.com.br/apostas/static/wp/arrascaeta-joga-hoje-pelo-flamengo.webp" alt="Notícia 4">
+                    </div>
+
+                    <div class="card">
+                        <a href="/html/noticiabanco.html">
+                        <h2>Banco Master: liquidação é decretada, dono é preso e fraudes podem chegar a R$ 12 bi. Veja o que se sabe até agora</h2>
+                        <h4> data: 18 de Novembro de 2025</h4>
+                        <img src="https://cdn.borainvestir.b3.com.br/2025/11/18093115/PF.webp" alt="Notícia 5">
+                        </a>
+                    </div>
+
+                    <div class="card">
+                        <h2>Resultado da Mega Sena 2941: veja os números do sorteio de hoje (18/11)</h2>
+                        <h4> data: 18 de Novembro de 2025 </h4>
+                        <img src="https://conteudo.imguol.com.br/c/noticias/5e/2023/08/19/mega-sena-loterias-1692493850819_v2_900x506.jpg" alt="Notícia 6">
+                    </div>
+                    
+                </div>
+            </section>
+        </main>
+            
+            <aside>
+    <h3>Redes Sociais</h3>
+    <div class="social-links">
+        <p>Siga-nos no Twitter, Facebook e Instagram!</p>
+    </div>
+</aside>
+
+<footer>
+    <p>&copy; 2025 Pega Visão. Todos os direitos reservados.</p>
+</footer>
+
+    <script>
+function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("open");
+}
+</script>
+</body>
+</html>

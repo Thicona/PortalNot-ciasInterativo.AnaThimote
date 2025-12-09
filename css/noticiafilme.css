@@ -1,0 +1,527 @@
+@import url("https://fonts.googleapis.com/css2?family=Aclonica&family=Amatic+SC:wght@400;700&family=Bungee&family=DynaPuff:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Pacifico&family=Playwrite+DE+SAS:wght@100..400&family=Playwrite+US+Modern:wght@100..400&family=Rock+Salt&display=swap");
+
+
+:root {
+    --primary-color: #7b0f0f;        
+    --secondary-color: #a43333;     
+    --card-bg: rgb(132, 41, 41);
+    --hover-color: #f7e0e0;         
+    --text-light: #c4bebe;
+    --text-dark: #000000;
+}
+
+body {
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--text-light);
+    color: var(--text-dark);
+    font-family: "Aclonica", sans-serif;
+    line-height: 1.6;
+}
+
+/* --- Caixa de Destaque (Pega Visão) --- */
+.box img {
+    max-width: 200px;
+    height: auto;
+    margin-top: 20px;
+    margin: 20px;
+}
+
+.box {
+    width: clamp(300px, 80%, 700px); 
+    width: 690px;
+    height: 200px;
+    margin: 40px auto 20px;
+    background-color: var(--card-bg);
+    color: var(--text-light);
+    border-radius: 22px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #7b0f0f; 
+
+}
+.box h1 {
+    font-size: clamp(30px, 5vw, 45px); 
+    margin: 0;
+    font-weight: 700;
+    color: var(--text-light);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    font-family:"Aclonica", sans-serif;
+}
+
+header h1 {
+    font-size: clamp(30px, 5vw, 45px); 
+    margin: 0;
+    font-weight: 700;
+    color: var(--text-light);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Botão do menu */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 28px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 11000;
+    transition: 0.3s;
+}
+
+.menu-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Sidebar escondido inicialmente */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -240px;   /* escondido */
+    width: 220px;
+    height: 100vh;
+    background-color: var(--primary-color);
+    padding-top: 30px;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.4);
+    z-index: 10000;
+    transition: 0.4s ease;
+}
+
+.sidebar.open {
+    left: 0;       /* aparece */
+}
+
+.sidebar h2 {
+    color: var(--hover-color);
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Aclonica", sans-serif;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+/* Removemos o margin-left do body */
+body {
+    margin-left: 0 !important;
+}
+
+/* --- Header e Navegação --- */
+
+header {
+    order: -1; 
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    width: 100%;
+    background-color: var(--primary-color);
+    box-sizing: border-box;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    font-size: 18px; 
+    font-family: "Aclonica", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text-light);
+    display: block;
+    padding: 5px 10px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--hover-color);
+    transform: translateY(-2px); 
+}
+
+
+
+/* --- Barra de Pesquisa --- */
+
+.search-box {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.search-box input[type="text"] {
+    padding: 12px 20px;
+    width: 300px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50px;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: var(--text-light);
+    color: var(--text-dark);
+}
+
+.search-box input[type="text"]:focus {
+    width: 400px;
+    box-shadow: 0 0 15px var(--secondary-color);
+    border-color: var(--primary-color);
+}
+
+.search-box button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: -50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-box button:hover {
+    background-color: var(--card-bg);
+    color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+
+/* ===== Aside das Redes Sociais ===== */
+aside {
+    width: 90%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 20px 25px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+aside h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.social-links p {
+    margin: 0;
+    font-size: 1rem;
+    color: #444;
+    font-weight: 600;
+}
+
+.social-links p:hover {
+    color: var(--secondary-color);
+    transition: 0.3s;
+}
+
+
+/* ===== Footer ===== */
+footer {
+    width: 100%;
+    margin-top: 50px;
+    background: var(--secondary-color);
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 12px 12px 0 0;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Efeito de entrada suave */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+.titulo {
+    margin: 20px;
+    width: 1200px;
+    height: 200px;
+    font-family: "Aclonica", sans-serif;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.titulo p {
+    margin: 10px;
+    font-size: 14px;
+    color: #b4b0b0;
+}
+
+h2 {
+    margin: 20px;
+    font-family: "Aclonica", sans-serif;
+    font-size: 20px;
+}
+
+img {
+    width: 800px;
+    height: auto;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+h2 {
+    margin: 20px;
+    font-family: josefin sans, sans-serif;
+    font-size: 20px;
+}
+
+p {
+    margin: 10px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 22px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.conteudo h1 {
+    margin-top: 40px;
+    font-size: 28px;
+    color: #7b0f0f;
+    text-align: left;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 30px;
+    font-size: 1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #dddddd;
+}
+
+tr:first-child td {
+    background-color: #a53434;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tr:hover {
+    background-color: #e6f7ff;
+    cursor: default;
+}
+
+tr:nth-child(2) td {
+    font-weight: bold;
+    color: #28a745;
+    text-align: center;
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Responsividade adicionada --- */
+
+@media (max-width: 900px) {
+    /* Ajuste do Header e Nav */
+    nav ul {
+        gap: 15px;
+    }
+    /* Ajuste de fontes e margens */
+    p {
+        font-size: 20px;
+    }
+    .conteudo h1 {
+        font-size: 24px;
+    }
+    table {
+        margin: 20px 0;
+        width: 95%;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Ajuste do Header */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav {
+        justify-content: center;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    
+    /* Ajuste da Barra de Pesquisa */
+    .search-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-box input[type="text"] {
+        width: 90%;
+        margin: 10px auto;
+        padding-right: 20px;
+    }
+    .search-box input[type="text"]:focus {
+        width: 90%;
+    }
+    .search-box button {
+        margin: 0 auto 10px;
+        margin-left: 0;
+        align-self: center;
+        width: 50%;
+        position: static;
+    }
+    
+    /* Ajuste do Conteúdo do Artigo */
+    p {
+        font-size: 18px; /* Reduz o tamanho da fonte para mobile */
+    }
+    .conteudo h1 {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    
+    /* Ajuste para imagens */
+    img {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Tabela Responsiva para mobile */
+    table {
+        display: block; /* Faz a tabela se comportar como um div */
+        overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+        white-space: nowrap; /* Tenta manter o conteúdo em uma linha */
+        width: 100%;
+    }
+    /* Define uma largura mínima para a tabela para forçar a rolagem, se o conteúdo for muito grande */
+    table thead, table tbody, table th, table td, table tr {
+        display: block;
+    }
+
+    /* Remove os blocos de display para as células para evitar empilhamento em colunas */
+    table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    table tr {
+        border-bottom: 2px solid #ccc;
+        margin-bottom: 10px;
+    }
+    table td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+    /* Adiciona labels antes do conteúdo das células */
+    table td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: var(--primary-color);
+        content: attr(data-label);
+    }
+    /* Revertendo para o design de rolagem horizontal mais simples, que é menos disruptivo */
+    table {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+        min-width: 400px; /* Garante que haja largura suficiente para os dados em mobile, forçando o scroll */
+    }
+    table tr, table td, table th {
+        white-space: normal;
+        display: table-cell;
+        width: auto;
+        padding-left: 12px;
+        text-align: left;
+    }
+}
